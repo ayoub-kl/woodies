@@ -1,0 +1,44 @@
+.menubar_wrapper{
+    position: sticky;
+    // top: 20px;
+    top: 0;
+    padding-top: 10px;
+    z-index: 10;
+
+//     & --active{
+//  background-color: white;
+//     }
+   
+}
+.--active{
+    background-color: #f5f5f5;
+       }
+.menubar_container{
+
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    justify-content: center;
+
+.menubar_option{
+  
+    margin-right: 80px;
+    font-size: 15px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: 700;
+    text-decoration: none;
+    color:rgba(34, 34, 34, 0.7)
+}
+}
+
+.menubar_option:first-of-type{
+
+        display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    padding-right: 15%;
+   
+    
+}

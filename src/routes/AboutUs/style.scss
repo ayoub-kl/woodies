@@ -1,0 +1,68 @@
+.aboutus_container {
+  margin-top: 3%;
+  font-family: "Nunito";
+  .aboutus_title_wrapper {
+    display: flex;
+    justify-content: center;
+
+    font-style: normal;
+    height: 200px;
+    align-items: center;
+    margin-bottom: 2%;
+    
+    & h1 {
+      font-weight: 800;
+      font-size: 72px;
+   
+      color: rgb(34 34 34 / 70%);
+      padding: 10px;
+    }
+    & h2 {
+      font-weight: 700;
+      font-size: 36px;
+  
+      padding: 10px;
+    }
+
+.about_us_title_divider{
+    position: relative;
+width: 32%;
+height: 0px;
+// left: 357px;
+// top: 49px;
+border: 1px solid #000000;
+}
+
+  }
+
+.aboutus_subs_wrapper{
+
+height: 800px;
+
+
+.aboutus_subtitles{
+      // background: "white",
+   
+      position: absolute;
+      top: 27%;
+        left: 10%;
+      color:white;
+      font-weight:500;
+      font-size: 20px;
+      width:38%;
+      background-color: rgb(24 25 26 / 37%);
+      border-radius: 15px 30px 45px;
+      padding: 14px;
+      text-align:center;
+
+}
+.sd_child{
+    @extend .aboutus_subtitles;
+    top: 72%;
+    left: 54%;
+    font-size: 45px;
+}
+}
+
+
+}
