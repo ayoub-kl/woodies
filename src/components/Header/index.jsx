@@ -7,9 +7,10 @@ import useWindowPosition from "hooks/useWindowPosition";
 export default () => {
 const scrollPos=useWindowPosition()
 
-useLayoutEffect(() => {
-console.log(scrollPos)
-}, [scrollPos])
+
+// useLayoutEffect(() => {
+// console.log(scrollPos)
+// }, [scrollPos])
 
 const handleLinkClick=(id) =>{
 // ref.current?.scrollIntoView({behavior:'smooth'})
@@ -43,7 +44,7 @@ if (element) {
         {renderSideBarOption("/", "", "Home","homePage")}
         {renderSideBarOption("about-us", "", "About us","aboutUs")}
         {renderSideBarOption("how-it-works", "", "How it works","steps")}
-        {renderSideBarOption("/", "", "Categories")}
+        {renderSideBarOption("gallery", "", "Gallery","portfolio")}
         {renderSideBarOption("/", "", "Testimony")}
       </nav>
     </div>
