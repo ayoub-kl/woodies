@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import Logo from "assets/logo/wood-svgrepo-com.svg";
 import "./style.scss";
 import { Parallax, Background } from "react-parallax";
-import bkg_prlx from "assets/images/nkg_prlx2.jpg";
+import bkg_prlx from "assets/images/bkg_prlx2.jpg";
 import measure from "assets/design/measure.svg";
 import choice from "assets/design/choice.svg";
 import build from "assets/design/build.svg";
@@ -38,8 +38,8 @@ export default () => {
         <Parallax
           bgImage={bkg_prlx}
           strength={300}
-          lazy
-          bgImageAlt="bg nice place"
+          lazy={true}
+          bgImageAlt='woodies steps background'
           bgImageStyle={bkg_styles}
         >
           <div style={{ height: "600px" }}>

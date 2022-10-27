@@ -3,7 +3,7 @@ import './style.scss'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Autoplay, Pagination } from "swiper";
+import { Autoplay, Lazy, Pagination } from "swiper";
 import modele1 from 'assets/portfolio/modele1.jpg'
 import modele2 from 'assets/portfolio/modele2.jpg'
 import modele3 from 'assets/portfolio/modele3.jpg'
@@ -35,11 +35,12 @@ return (
     <div className='portfolio_container' id='portfolio'>
     <div className='design_rect'>
         <Swiper
+        lazy={true}
     pagination={{
       dynamicBullets: true,
     }}
     autoplay={{delay:2500}}
-    modules={[Autoplay,Pagination]}
+    modules={[Autoplay,Pagination,Lazy]}
     className="mySwiper"
   >
 {renderModeleImg(modele1)}

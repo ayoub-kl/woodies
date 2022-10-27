@@ -45,7 +45,7 @@ if (element) {
         {renderSideBarOption("about-us", "", "About us","aboutUs")}
         {renderSideBarOption("how-it-works", "", "How it works","steps")}
         {renderSideBarOption("gallery", "", "Gallery","portfolio")}
-        {renderSideBarOption("/", "", "Testimony")}
+        {renderSideBarOption("contact", "", "Contact",'contact')}
       </nav>
     </div>
   );

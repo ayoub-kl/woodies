@@ -6,7 +6,7 @@
     background-size: 120px auto;
     font-family: "Nunito";
 will-change: background-color;
-transition: background-color 1s ease;
+transition: background-color 1s ease-in-out;
       /* hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -18,9 +18,11 @@ transition: background-color 1s ease;
 }
 
 .active{
-  background-color:rgb(217 210 197 / 72%);
+  // background-color:rgb(217 210 197 / 72%);
+  background-color:  #F1F1F1;
 
   // e1d2ae
+  
   background-image:none;
   transition: background-color 1s ease-in-out;
 }

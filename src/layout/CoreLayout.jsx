@@ -8,6 +8,7 @@ import AboutUs from "routes/AboutUs";
 import HowToSteps from "routes/HowToSteps";
 import Portfolio from "routes/Portfolio";
 import useWindowPosition from "hooks/useWindowPosition";
+import Contact from "routes/Contact";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({ children }) => {
@@ -42,6 +43,8 @@ useLayoutEffect(() => {
       <AboutUs/>
       <HowToSteps/>
       <Portfolio/>
+      <Contact/>
+
     </div>
   );
 };

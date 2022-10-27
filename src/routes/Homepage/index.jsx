@@ -41,11 +41,13 @@ export default () => {
 
         <span className="rect_design_container">
           <img
+          loading="lazy"
             className="rect_design"
             src={table}
             alt="Woodies! wood table design"
           />
           <img
+          loading="lazy"
             className="rect_design"
             src={rect}
             alt="Woodies! wood table design"

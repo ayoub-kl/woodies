@@ -16,7 +16,7 @@ return (
     <span className='about_us_title_divider'/>
     <h1> About us</h1>
     </div>
-    <Parallax bgImage={bkg_prlx} strength={600} lazy bgImageAlt='bg nice place' blur={{ min: -1, max: 3 }} >
+    <Parallax bgImage={bkg_prlx} strength={600} lazy={true} bgImageAlt='woodies portfolio models' blur={{ min: -1, max: 2 }} >
     <div className='aboutus_subs_wrapper'>
       <div className='aboutus_subtitles'>
       <h1> WOODIES is the home of modern wooden furniture . </h1>

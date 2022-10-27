@@ -15,6 +15,8 @@ export default () =>{
         <Route path="/" element={<Homepage/>} />
         <Route path="about-us" element={<AboutUs/>} />
         <Route path="how-it-works" element={<HowToSteps/>} />
+        <Route path="gallery" element={<HowToSteps/>} />
+        <Route path="contact" element={<HowToSteps/>} />
         </Routes>
         </div>
 

@@ -1,3 +1,27 @@
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+// .shake_it{
+//   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+//   transform: translate3d(0, 0, 0);
+//   backface-visibility: hidden;
+//   perspective: 1000px;
+// }
 
 .portfolio_container{
   z-index: 8;
@@ -78,15 +102,24 @@ line-height: 195%;
 width: 70%;
 }
 & button{
-  width: 469px;
-  height: 111px;
+  // width: 469px;
+  // height: 111px;
   background: #E89F71;
   border: none;
   border-radius: 2%;
   margin: 32px;
-  font-size: 20px;
+  font-size: 22px;
   color: white;
   cursor: pointer;
+  padding: 38px 179px;
+
+  &:hover{
+
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
 }
 }
 }
