@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/woodies/static/css/main.fe98eaa2.css",
+    "main.js": "/woodies/static/js/main.99000875.js",
+    "static/js/787.d29f17cb.chunk.js": "/woodies/static/js/787.d29f17cb.chunk.js",
+    "static/media/bkg_prlx.jpg": "/woodies/static/media/bkg_prlx.785d43a420c968ae9394.jpg",
+    "static/media/modele3.jpg": "/woodies/static/media/modele3.dc3daeb9f0f04766f627.jpg",
+    "static/media/modele1.jpg": "/woodies/static/media/modele1.8c1636fe1311b98c2bf8.jpg",
+    "static/media/bkg_prlx2.jpg": "/woodies/static/media/bkg_prlx2.8c0986e3e52bc90cbc11.jpg",
+    "static/media/modele2.jpg": "/woodies/static/media/modele2.052ce39a171206b98c5c.jpg",
+    "static/media/table.svg": "/woodies/static/media/table.3eeefcd500f58698b86e09b9eaf4c484.svg",
+    "static/media/pattern1.gif": "/woodies/static/media/pattern1.065d0b9791dbe0fcab7e.gif",
+    "static/media/contact_bg.svg": "/woodies/static/media/contact_bg.e667aa621adf1c65d55b.svg",
+    "static/media/contact.svg": "/woodies/static/media/contact.ccfd3acf3cc5301d0a88.svg",
+    "static/media/invoice.svg": "/woodies/static/media/invoice.d37d15b3b9616ece6e022d33663fd6ea.svg",
+    "static/media/build.svg": "/woodies/static/media/build.d799e12cf330e65143f9ed633dbc6502.svg",
+    "static/media/measure.svg": "/woodies/static/media/measure.cbe99fd56ff3f2e6a32cafb4031e8336.svg",
+    "static/media/wood-svgrepo-com.svg": "/woodies/static/media/wood-svgrepo-com.7e211afe8192132669c1ba103f66629f.svg",
+    "static/media/choice.svg": "/woodies/static/media/choice.8e38a5ed3965a835ec8a0e5367915e04.svg",
+    "index.html": "/woodies/index.html",
+    "static/media/rect.svg": "/woodies/static/media/rect.520a98f44de2ac1a86a4066467c74692.svg",
+    "main.fe98eaa2.css.map": "/woodies/static/css/main.fe98eaa2.css.map",
+    "main.99000875.js.map": "/woodies/static/js/main.99000875.js.map",
+    "787.d29f17cb.chunk.js.map": "/woodies/static/js/787.d29f17cb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe98eaa2.css",
+    "static/js/main.99000875.js"
+  ]
+}
