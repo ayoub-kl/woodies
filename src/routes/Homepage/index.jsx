@@ -15,7 +15,7 @@ import {
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default () => {
+export default ({device}) => {
   function renderBadges(icon, title, description) {
     return (
       <div className="homepage_bdg">

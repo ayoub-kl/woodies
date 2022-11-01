@@ -1,4 +1,4 @@
-import SmoothScroll from 'components/Utils/SmoothScroll/SmoothScroll';
+import DeviceProvider from 'hooks/deviceProvider';
 import React from 'react'
 import { HelmetProvider } from 'react-helmet-async';
 import './App.css';
@@ -10,10 +10,11 @@ export default () =>{
 
 return (
     <HelmetProvider>
- 
+    <DeviceProvider>
     <CoreLayout>
     <AppRoutes/>
     </CoreLayout>
+    </DeviceProvider>
     </HelmetProvider>
 )
 }

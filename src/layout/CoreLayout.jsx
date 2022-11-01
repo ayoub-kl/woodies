@@ -9,41 +9,34 @@ import HowToSteps from "routes/HowToSteps";
 import Portfolio from "routes/Portfolio";
 import useWindowPosition from "hooks/useWindowPosition";
 import Contact from "routes/Contact";
+import Aside from "./Aside";
+import { useDevice } from "hooks/deviceProvider";
+
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({ children }) => {
-  const scrollPos=useWindowPosition()
-const [isActive,setIsActive]=useState(false)
-// const offset = document.getElementById('portfolio').getBoundingClientRect().top;
+const {device} = useDevice()
 
 useEffect(() => {
-  console.log(isActive)
+  console.log(device)
 
-}, [isActive])
+}, [device])
 
-
-useLayoutEffect(() => {
-  const offset = document.getElementById('portfolio')?.getBoundingClientRect()?.bottom;
-  scrollPos >= offset ? setIsActive(true) : setIsActive(false)
-  // console.log("scrol",scrollPos)
-  // console.log("off",offset)
-}, [scrollPos])
-  // const aboutUsRef=useRef()
   return (
-    <div className={isActive ? "core_wrapper active" : "core_wrapper" }>
+    <div className="core_wrapper">
       <SEO
         title="Woodies! building furniture made easier"
         description="is it made from wood ? then we can make it ! Woodies is a modern furniture showcasing website"
         name="Woodies!"
         type="furniture website"
       />
-
-      <Header />
-      <Homepage/>
-      <AboutUs/>
-      <HowToSteps/>
-      <Portfolio/>
-      <Contact/>
+      <Aside/>
+      <Header  device={device}/>
+      <Homepage  device={device}/>
+      <AboutUs  device={device}/>
+      <HowToSteps  device={device}/>
+      <Portfolio  device={device}/>
+      <Contact  device={device}/>
 
     </div>
   );

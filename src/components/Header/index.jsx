@@ -4,7 +4,7 @@ import "./style.scss";
 import Logo from "assets/logo/wood-svgrepo-com.svg";
 import useWindowPosition from "hooks/useWindowPosition";
 // eslint-disable-next-line import/no-anonymous-default-export
-export default () => {
+export default ({device}) => {
 const scrollPos=useWindowPosition()
 
 
@@ -13,8 +13,6 @@ const scrollPos=useWindowPosition()
 // }, [scrollPos])
 
 const handleLinkClick=(id) =>{
-// ref.current?.scrollIntoView({behavior:'smooth'})
-// window.scrollTo({ behavior: 'smooth', top: ref.current.offsetTop })
 const element = document.getElementById(id);
 if (element) {
   element.scrollIntoView({ behavior: 'smooth' });

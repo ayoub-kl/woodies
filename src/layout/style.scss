@@ -1,28 +1,18 @@
 
 .core_wrapper{
 
-    background-color: #E5E5E5;
-    background-image: url(../assets/design/pattern1.gif);
-    background-size: 120px auto;
     font-family: "Nunito";
-will-change: background-color;
-transition: background-color 1s ease-in-out;
-      /* hide scrollbar for IE, Edge and Firefox */
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 
-/* hide scrollbar for chrome, safari and opera */
-::-webkit-scrollbar {
-  display: none;
-}
+//       /* hide scrollbar for IE, Edge and Firefox */
+//   -ms-overflow-style: none;
+//   scrollbar-width: none;
+
+// /* hide scrollbar for chrome, safari and opera */
+// ::-webkit-scrollbar {
+//   display: none;
+// }
 }
 
-.active{
-  // background-color:rgb(217 210 197 / 72%);
-  background-color:  #F1F1F1;
 
-  // e1d2ae
-  
-  background-image:none;
-  transition: background-color 1s ease-in-out;
-}
+
+
