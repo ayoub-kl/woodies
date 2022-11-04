@@ -1,6 +1,10 @@
 .aboutus_container {
   margin-top: 3%;
   font-family: "Nunito";
+  
+  // &__mob{
+  //   // margin-top: 45%;
+  // }
   .aboutus_title_wrapper {
     display: flex;
     justify-content: center;
@@ -38,14 +42,19 @@ border: 1px solid #000000;
 .aboutus_subs_wrapper{
 
 height: 800px;
+display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 
+    &__mob{
+      @extend .aboutus_subs_wrapper;
+      align-items: center;
+    }
 
-.aboutus_subtitles{
-      // background: "white",
-   
-      position: absolute;
-      top: 27%;
-        left: 10%;
+.aboutus_subtitles{  
+      // position: absolute;
+      // top: 27%;
+      //   left: 10%;
       color:white;
       font-weight:500;
       font-size: 20px;
@@ -58,10 +67,29 @@ height: 800px;
 }
 .sd_child{
     @extend .aboutus_subtitles;
-    top: 72%;
-    left: 54%;
+    // top: 72%;
+    // left: 54%;
     font-size: 45px;
+    align-self: self-end;
 }
+
+
+.abssub_mob{  
+
+  font-size: 11px;
+  width: 62%;
+  padding: 8px;
+}
+.sd_child_mob{
+@extend .abssub_mob;
+// top: 72%;
+// left: 54%;
+font-size: 26px;
+align-self:auto
+}
+
+
+
 }
 
 

@@ -26,11 +26,25 @@
 .portfolio_container{
   z-index: 8;
   display: flex;
-  flex-direction: row-reverse;
+  // flex-direction: row-reverse;
   position: relative;
   height: 80vh;
   width: 90vw;
   margin-top: 100px;
+
+&__mob{
+  @extend .portfolio_container;
+  width: 94%;
+  margin-top: 0px;
+  flex-direction: column;
+  padding-top: 36px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  // padding-bottom: 34px;
+  margin: 15px;
+  height: auto;
+  // border-radius: 2%;
+}
+
 .design_rect{
   // position: absolute;
   // left: 34px;
@@ -40,6 +54,12 @@
   position: relative;
 height: 58vh;
 width: 60%;
+
+&__mob{
+  position: relative;
+    height: auto;
+    width: 100%;
+}
 }
 .swiper {
     width: 100%;
@@ -89,6 +109,7 @@ width: 60%;
   height: max-content;
   align-items: center;
   
+
 & h1{
   font-weight: 700;
 font-size: 56px;
@@ -112,7 +133,7 @@ width: 70%;
   color: white;
   cursor: pointer;
   padding: 38px 179px;
-
+  position: relative;
   &:hover{
 
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
@@ -122,4 +143,24 @@ width: 70%;
   }
 }
 }
+
+.pwc_mob{
+  @extend .portfolio_window_container;
+  transform:none;
+  background:transparent;
+  height: auto;
+  & h1{
+    font-size: 28px;
+  }
+  & h3{
+    font-size: 20px;
+  }
+
+  & button{
+    font-size: 14px;
+    padding: 32px 100px;
+  }
+}
+
+
 }

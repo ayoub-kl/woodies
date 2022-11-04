@@ -3,6 +3,8 @@
     display: flex;
     flex-direction: column;
     margin-top: 80px;
+    height: 100%;
+    position: relative;
     .steps_title_divider {
         position: relative;
         width: 66%;
@@ -42,6 +44,49 @@
             transform: scale(1.4);
            
         }
+
+    //     .contact_bg_mob{
+    //       background-image: url(http://localhost:3000/woodies/static/media/contact.ccfd3ac….svg);
+    // /* background: no-repeat; */
+    // /* background-size: cover; */
+    // width: 504px;
+    // height: 450px;
+    // position: absolute;
+    // right: 0;
+    // /* top: -318px; */
+    // /* transform: translateY(-56%); */
+    // transform: scale(1.4);
+
+    //     }
       }
+
+      .cw_mob{
+        @extend .contact_container;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        flex-direction: row;
+        z-index: 10;
+        .cew_mob{
+          display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    line-height: 26px;
+  padding: 0;
+        }
+.cbg_mob{
+  background-image: url(../../assets/design/contact.svg);
+  /* background: no-repeat; */
+  /* background-size: cover; */
+  width: 130vw;
+  height: 450px;
+  position: absolute;
+  top: -65px;
+  transform: scale(0.8);
+  z-index: -2;
+}
+
+      }
+
 }
    

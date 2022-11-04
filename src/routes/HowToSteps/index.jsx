@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import Logo from "assets/logo/wood-svgrepo-com.svg";
+import Logo from "assets/logo/woodies.svg";
 import "./style.scss";
 import { Parallax, Background } from "react-parallax";
 import bkg_prlx from "assets/images/bkg_prlx2.jpg";
@@ -9,7 +9,7 @@ import build from "assets/design/build.svg";
 import invoice from "assets/design/invoice.svg";
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default () => {
+export default ({device}) => {
   const bkg_styles = {
     height: "700px",
     width: "100vw",
@@ -27,12 +27,13 @@ export default () => {
   }
   return (
     <div className="steps_container" id="steps">
-      <div className="steps_title_wrapper">
+      
+    {device !== 'mobile' && <div className="steps_title_wrapper">
         <img src={Logo} width="30px" alt="Woodies! logo" />
         <h2>How to custom</h2>
         <span className="steps_title_divider" />
         <h1> How it works</h1>
-      </div>
+      </div> }
 
       <div>
         <Parallax

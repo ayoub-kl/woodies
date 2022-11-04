@@ -18,7 +18,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 export default ({device}) => {
   function renderBadges(icon, title, description) {
     return (
-      <div className="homepage_bdg">
+      <div className={device==="mobile" ? "homepage_bdg hpg_mob" : "homepage_bdg"}>
         <FontAwesomeIcon icon={icon} />
         <span>
           <p>{title}</p>
@@ -32,7 +32,7 @@ export default ({device}) => {
     <div className="homepage_container" id='homePage'>
       <div className="homepage_wrapper">
         <Fade left>
-          <span className="homepage_subtitle">
+          <span className={device==="mobile" ? "homepage_subtitle hs_mob" : "homepage_subtitle"}> 
             <h3>Are you looking for woodden furniture for your place?</h3>
             <h1> This is the Right Place</h1>
             <button className="homepage_explorebtn">Explore furniture</button>
@@ -42,19 +42,19 @@ export default ({device}) => {
         <span className="rect_design_container">
           <img
           loading="lazy"
-            className="rect_design"
+            className={device==="mobile" ? "rect_design rd_mob"  : "rect_design"}
             src={table}
             alt="Woodies! wood table design"
           />
           <img
           loading="lazy"
-            className="rect_design"
+          className={device==="mobile" ? "rect_design rd_mob"  : "rect_design"}
             src={rect}
             alt="Woodies! wood table design"
           />
         </span>
       </div>
-      <div className="homepage_badges">
+      <div className={device==="mobile" ? "homepage_badges hpgs_mob" : "homepage_badges"}>
         {renderBadges(faTrophy, "High quality", "Crafted from top materials")}
         {renderBadges(faCheckSquare, "Warranty protection", "Over 2 years")}
         {renderBadges(faTruckFast, "Free shipping", "Order over 150$")}
