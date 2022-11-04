@@ -2,15 +2,18 @@ import React, { useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
 import "./style.scss";
 import Logo from "assets/logo/woodies.svg";
-import Home from "assets/logo/home.svg";
-import AboutUs from "assets/logo/aboutUs.svg";
-import Steps from "assets/logo/steps.svg";
-import Gallery from "assets/logo/gallery.svg";
-import Contact from "assets/logo/contact.svg";
+import {
+  faHome,
+  faIdBadge,
+  faRectangleList,
+  faImage,
+  faContactCard
+} from "@fortawesome/free-solid-svg-icons";
 import useWindowPosition from "hooks/useWindowPosition";
 import { useEffect } from "react";
 import { useRef } from "react";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({device}) => {
 const scrollPos=useWindowPosition()
@@ -36,16 +39,23 @@ if (element) {
 }
 }
 
+const renderLogo = (id,icon)=>{
+
+  return  id==="logo" ? <img src={icon} width="50px" alt="Woodies! logo" /> :   <FontAwesomeIcon icon={icon} />
+
+}
+
 
   function renderSideBarOption(link, icon, text,id) {
     return (
       <Link
         to={link}
         onClick={()=>handleLinkClick(id)}
-        className={device==="mobile" ? "menubar_option mo_mob --active"  : "menubar_option"}
+        className={device==="mobile" ? "menubar_option mo_mob "  : "menubar_option"}
         // className={({ isActive }) => (isActive ? cx("sidebar__option--selected") : cx("sidebar__option"))}
       >
-        {device === "mobile" | (id==="logo" && device!=="mobile")  ? <img src={icon} width="50px" alt="Woodies! logo" /> : null}
+      
+        {device === "mobile" | (id==="logo" && device!=="mobile")  ?  renderLogo(id,icon)  : null}
 
       { device!=="mobile" && <p>{text}</p> } 
       </Link>
@@ -54,13 +64,13 @@ if (element) {
   // menubar_wrapper
   return (
     <div className={menubarCls}>
-      <nav className="menubar_container">
+      <nav className={device==="mobile" ? "menubar_container__mob" : "menubar_container"}>
         {device!=="mobile" && renderSideBarOption("/", Logo, "Woodies!","logo")}
-        {renderSideBarOption("/", Home, "Home","homePage")}
-        {renderSideBarOption("about-us", AboutUs, "About us","aboutUs")}
-        {renderSideBarOption("how-it-works", Steps, "How it works","steps")}
-        {renderSideBarOption("gallery", Gallery, "Gallery","portfolio")}
-        {renderSideBarOption("contact", Contact, "Contact",'contact')}
+        {renderSideBarOption("/", faHome, "Home","homePage")}
+        {renderSideBarOption("about-us", faIdBadge, "About us","aboutUs")}
+        {renderSideBarOption("how-it-works", faRectangleList, "How it works","steps")}
+        {renderSideBarOption("gallery", faImage, "Gallery","portfolio")}
+        {renderSideBarOption("contact", faContactCard, "Contact",'contact')}
       </nav>
     </div>
   );

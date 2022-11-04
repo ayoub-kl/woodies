@@ -45,7 +45,7 @@ export default ({device}) => {
         >
           <div style={{ height: "600px" }}>
             <div className="steps_title_wrapper">
-              <div className="steps_subtitles">
+              <div className={device==="mobile" ? "steps_subtitles__mob" : "steps_subtitles"}>
                 <h1> 4 STEPS</h1>
               </div>
             </div>

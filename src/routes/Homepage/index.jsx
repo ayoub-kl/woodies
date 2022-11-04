@@ -4,7 +4,7 @@ import React from "react";
 import rect from "assets/design/rect.svg";
 import table from "assets/design/table.svg";
 import "./style.scss";
-import Fade from "react-reveal/Fade";
+// import Fade from "react-reveal/Fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTrophy,
@@ -31,13 +31,13 @@ export default ({device}) => {
   return (
     <div className="homepage_container" id='homePage'>
       <div className="homepage_wrapper">
-        <Fade left>
+       
           <span className={device==="mobile" ? "homepage_subtitle hs_mob" : "homepage_subtitle"}> 
             <h3>Are you looking for woodden furniture for your place?</h3>
             <h1> This is the Right Place</h1>
             <button className="homepage_explorebtn">Explore furniture</button>
           </span>
-        </Fade>
+
 
         <span className="rect_design_container">
           <img

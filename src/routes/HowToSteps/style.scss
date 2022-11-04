@@ -59,6 +59,14 @@ color:rgb(34 34 34 / 33%);
         padding: 21px;
         border-radius: 15px 30px 45px;
         background-color: rgba(24, 25, 26, 0.37);
+   
+    }
+    &__mob{
+@extend .steps_subtitles;
+
+& h1{
+  font-size: 30px !important;
+}
     }
 }
   }

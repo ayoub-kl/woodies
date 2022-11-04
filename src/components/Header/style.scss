@@ -30,6 +30,12 @@
   justify-content: center;
   padding: 5px;
 
+  &__mob{
+    @extend .menubar_container;
+    // border-radius: 15px 30px 45px;
+    // border: 6px solid #ccc;
+  }
+
   .menubar_option {
     margin-right: 80px;
     font-size: 15px;
@@ -46,6 +52,10 @@
     font-size: 14px;
     letter-spacing: 2.2px;
     font-weight: 700;
+    padding: 11px !important;
+    font-size: 30px !important;
+    color: #e89f71;
+    background: transparent !important;
   }
 }
 
@@ -56,9 +66,9 @@
   padding-right: 15%;
 }
 
-.mo_mob:first-of-type {
-    display: flex;
-    flex-direction: row;
-    font-size: 14px;
-    padding: 0;
-  }
+// .mo_mob:first-of-type {
+//     display: flex;
+//     flex-direction: row;
+//     font-size: 14px;
+//     padding: 0;
+//   }
