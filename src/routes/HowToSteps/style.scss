@@ -77,7 +77,11 @@ color:rgb(34 34 34 / 33%);
     justify-content: center;
     transform: translate(0, -110px);
     align-items: flex-start;
-    flex-wrap: wrap;
+ 
+    &__mob{
+      @extend .steps_disp_choices;
+      flex-wrap: wrap;
+    }
   .steps_wrapper{
     padding: 20px;
     box-sizing: border-box; 
