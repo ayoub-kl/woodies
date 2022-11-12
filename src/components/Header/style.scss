@@ -1,3 +1,8 @@
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg) 
+  }
+}
 .menubar_wrapper {
   position: sticky;
   top: 0;
@@ -45,6 +50,16 @@
     font-weight: 700;
     text-decoration: none;
     color: rgba(34, 34, 34, 0.7);
+
+    & span {
+      position: relative;
+      display: inline-block;
+      font-size: 30px;
+      color: rgba(34, 34, 34, 0.7);
+      text-transform: uppercase;
+      animation: flip 6s infinite;
+      animation-delay: calc(.2s * var(--i))
+    }
   }
 
   .mo_mob {

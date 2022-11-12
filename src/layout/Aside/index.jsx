@@ -7,21 +7,21 @@ export default () =>{
     const scrollPos=useWindowPosition()
     const [isActive,setIsActive]=useState(false)
     // const [offset,setOffset]=useState()
-    const offset = document.getElementById('portfolio')?.getBoundingClientRect()?.top;
+    // const offset = document.getElementById('portfolio')?.getBoundingClientRect()?.top;
     
     // useLayoutEffect(() => {
     //     const offsetVal = document.getElementById('portfolio')?.getBoundingClientRect()?.top;
     //     setOffset(offsetVal)
     // }, [])
 
-    useEffect(() => {
-        console.log("offset",offset)
-         }, [offset])
+    // useEffect(() => {
+    //     console.log("ASIDE rendered")
+    //      }, [])
 
 
     useLayoutEffect(() => {
-        scrollPos >= offset ? setIsActive(true) : setIsActive(false)
-        console.log("scrollpos",scrollPos)
+        scrollPos >= false ? setIsActive(true) : setIsActive(false)
+        // console.log("scrollpos",scrollPos)
       }, [scrollPos])
 
 

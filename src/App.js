@@ -1,6 +1,7 @@
 import DeviceProvider from 'hooks/deviceProvider';
 import React from 'react'
 import { HelmetProvider } from 'react-helmet-async';
+import { ParallaxProvider } from 'react-scroll-parallax';
 import './App.css';
 import CoreLayout from "./layout/CoreLayout"
 import AppRoutes from "./routes/AppRoutes"
@@ -9,6 +10,7 @@ import AppRoutes from "./routes/AppRoutes"
 export default () =>{
 
 return (
+    <ParallaxProvider>
     <HelmetProvider>
     <DeviceProvider>
     <CoreLayout>
@@ -16,5 +18,7 @@ return (
     </CoreLayout>
     </DeviceProvider>
     </HelmetProvider>
+    </ParallaxProvider>
+
 )
 }

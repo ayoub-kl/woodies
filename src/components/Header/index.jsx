@@ -18,11 +18,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default ({device}) => {
 const scrollPos=useWindowPosition()
 const [menubarCls,setMenuBarCls]=useState("")
-
+const isMobile=device==="mobile"
 useEffect(() => {
-console.log("FIRED")
 let barCls="menubar_wrapper"
-barCls=device==="mobile" ? `${barCls} mw_mob --active` : barCls
+barCls=isMobile ? `${barCls} mw_mob --active` : barCls
 barCls=scrollPos>0? `${barCls} --active` : barCls 
 setMenuBarCls(barCls)
 }, [scrollPos,device])
@@ -45,6 +44,16 @@ const renderLogo = (id,icon)=>{
 
 }
 
+const renderArrFromText = (text) =>{
+const arrInput=Array.from(text)
+let arrSpanTitle=[]
+// console.log(arr)
+arrInput.forEach((elem,index) =>  (
+  arrSpanTitle.push(<span key={index} style={{"--i":index}}>{elem}</span>)
+))
+return arrSpanTitle
+
+}
 
   function renderSideBarOption(link, icon, text,id) {
     return (
@@ -55,16 +64,16 @@ const renderLogo = (id,icon)=>{
         // className={({ isActive }) => (isActive ? cx("sidebar__option--selected") : cx("sidebar__option"))}
       >
       
-        {device === "mobile" | (id==="logo" && device!=="mobile")  ?  renderLogo(id,icon)  : null}
+        {isMobile | (id==="logo" && device!=="mobile")  ?  renderLogo(id,icon)  : null}
 
-      { device!=="mobile" && <p>{text}</p> } 
+      { (!isMobile && id==="logo") ? renderArrFromText(text) : !isMobile ? <p>{text}</p> : null } 
       </Link>
     );
   }
   // menubar_wrapper
   return (
     <div className={menubarCls}>
-      <nav className={device==="mobile" ? "menubar_container__mob" : "menubar_container"}>
+      <nav className={isMobile ? "menubar_container__mob" : "menubar_container"}>
         {device!=="mobile" && renderSideBarOption("/", Logo, "Woodies!","logo")}
         {renderSideBarOption("/", faHome, "Home","homePage")}
         {renderSideBarOption("about-us", faIdBadge, "About us","aboutUs")}

@@ -37,7 +37,7 @@ export default ({device}) => {
       <div className="homepage_wrapper">
        
           <span className={isMobile ? "homepage_subtitle hs_mob" : isLaptop ? "homepage_subtitle hs_lap" : "homepage_subtitle"}> 
-            <h3>Are you looking for woodden furniture for your place?</h3>
+            <h3>Are you looking for wooden furniture for your place?</h3>
             <h1> This is the Right Place</h1>
             <button className="homepage_explorebtn">Explore furniture</button>
           </span>
