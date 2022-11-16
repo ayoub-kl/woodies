@@ -14,6 +14,7 @@ export default memo(({ device }) => {
   const isMobile = device === "mobile";
 
   const background = {
+  
     image: bkg_prlx,
     translateY: [0, 50],
     opacity: [1, 0.5],
@@ -33,7 +34,8 @@ export default memo(({ device }) => {
           isMobile ? "aboutus_subtitles abssub_mob" : "aboutus_subtitles inset"
         }
       >
-        <h2> WOODIES is the home of modern wooden furniture . </h2>
+        <h2> <span className="flicker-fast">WOODIES</span> is the <span className="flicker-fast">home</span> of modern wooden <span className="flicker-fast">furniture</span> </h2>
+
       </div>
     ),
   };
@@ -44,6 +46,8 @@ export default memo(({ device }) => {
     scale: [1, 1, "easeOutCubic"],
     shouldAlwaysCompleteAnimation: true,
     speed: -10,
+    
+   
   };
 
   const gradientOverlay = {
@@ -91,6 +95,7 @@ export default memo(({ device }) => {
         <>
           {" "}
           <ParallaxBanner
+
             layers={[background, headline, foreground, gradientOverlay]}
             className="full"
           />
@@ -101,7 +106,7 @@ export default memo(({ device }) => {
                 : "aboutus_subtitles full mask"
             }
           >
-            <h1>Customized furniture made just for you.</h1>
+            <h1>Customized furniture made just for you</h1>
           </div>
           
         </>

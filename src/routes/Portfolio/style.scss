@@ -16,6 +16,16 @@
   }
 }
 
+@keyframes morph {
+  0% {border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;} 
+  100% {border-radius: 40% 60%;} 
+}
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
 
 // .shake_it{
 //   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
@@ -36,7 +46,7 @@
   position: relative;
   height: 80vh;
   width: 90vw;
-  margin-top: 100px;
+  margin-top: 20vh;
 
 &__mob{
   @extend .portfolio_container;
@@ -52,6 +62,7 @@
 }
 
 .design_rect{
+  
   // position: absolute;
   // left: 34px;
   // width: 120%;
@@ -70,9 +81,14 @@ width: 60%;
 .swiper {
     width: 100%;
     height: 100%;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    animation: morph 4s ease-in-out infinite both alternate;
+    // animation: spin 12s linear infinite;
+  
   }
   
   .swiper-slide {
+    
     text-align: center;
     font-size: 18px;
     background: #fff;
