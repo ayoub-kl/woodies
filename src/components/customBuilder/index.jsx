@@ -29,16 +29,16 @@ console.log(isActive)
         <div>
         <nav className="builder_progress_bar">
         <ul>
-        <li className={isActive ? 'button active':'button'} id="nav_1" onClick={()=>goToStep(1)}>
+        <li className={currentStep>=1 ?  'button active':'button'} id="nav_1" onClick={()=>goToStep(1)}>
         <button >1.Choix du meuble</button>
         </li>
-        <li className={isActive ? 'button active':'button'} id="nav_2" onClick={(e)=>handleSelectNav(e.currentTarget.id)}>
+        <li className={currentStep>=2 ?'button active':'button'} id="nav_2" onClick={(e)=>handleSelectNav(e.currentTarget.id)}>
         <button > test</button>
         </li>
-        <li className={isActive ? 'button active':'button'} id="nav_3" onClick={(e)=>handleSelectNav(e.currentTarget.id)}>
+        <li className={currentStep>=3 ? 'button active':'button'} id="nav_3" onClick={(e)=>handleSelectNav(e.currentTarget.id)}>
         <button > test</button>
         </li>
-        <li className={selectedNav==="nav_4" ? 'button active':'button'} id="nav_4" onClick={(e)=>handleSelectNav(e.currentTarget.id)}>
+        <li className={currentStep>=4  ? 'button active':'button'} id="nav_4" onClick={(e)=>handleSelectNav(e.currentTarget.id)}>
         <button > test</button>
         </li>
         </ul>
@@ -67,8 +67,19 @@ return (
 
     <div className='builder_wrapper'>
     <nav className='builder_header'>
+    <div className='builder_title_ribbon'>
+ 
     <img src={Logo} width="50px" alt="Woodies! logo" />
+
     {renderArrFromText("Woodies!")}
+    
+   
+      <i className='rib_1'></i>
+      <i className='rib_2'></i>
+      <i className='rib_3'></i>
+      <i className='rib_4'></i>
+    </div>
+  
     </nav>
 
     <StepWizard nav={<CustomNav />} isLazyMount={true} onStepChange={handleStepChange} >
