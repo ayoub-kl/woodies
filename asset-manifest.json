@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/woodies/static/css/main.e7c4a2fb.css",
-    "main.js": "/woodies/static/js/main.e6cd9202.js",
+    "main.js": "/woodies/static/js/main.bf805a00.js",
     "static/css/492.bec861f0.chunk.css": "/woodies/static/css/492.bec861f0.chunk.css",
     "static/js/492.057b294c.chunk.js": "/woodies/static/js/492.057b294c.chunk.js",
-    "static/css/997.2b311518.chunk.css": "/woodies/static/css/997.2b311518.chunk.css",
+    "static/css/997.b23a9b14.chunk.css": "/woodies/static/css/997.b23a9b14.chunk.css",
     "static/js/997.25210929.chunk.js": "/woodies/static/js/997.25210929.chunk.js",
     "static/css/321.8c5c42c7.chunk.css": "/woodies/static/css/321.8c5c42c7.chunk.css",
     "static/js/321.0db2ee7c.chunk.js": "/woodies/static/js/321.0db2ee7c.chunk.js",
@@ -50,10 +50,10 @@
     "index.html": "/woodies/index.html",
     "static/media/rect.svg": "/woodies/static/media/rect.520a98f44de2ac1a86a4066467c74692.svg",
     "main.e7c4a2fb.css.map": "/woodies/static/css/main.e7c4a2fb.css.map",
-    "main.e6cd9202.js.map": "/woodies/static/js/main.e6cd9202.js.map",
+    "main.bf805a00.js.map": "/woodies/static/js/main.bf805a00.js.map",
     "492.bec861f0.chunk.css.map": "/woodies/static/css/492.bec861f0.chunk.css.map",
     "492.057b294c.chunk.js.map": "/woodies/static/js/492.057b294c.chunk.js.map",
-    "997.2b311518.chunk.css.map": "/woodies/static/css/997.2b311518.chunk.css.map",
+    "997.b23a9b14.chunk.css.map": "/woodies/static/css/997.b23a9b14.chunk.css.map",
     "997.25210929.chunk.js.map": "/woodies/static/js/997.25210929.chunk.js.map",
     "321.8c5c42c7.chunk.css.map": "/woodies/static/css/321.8c5c42c7.chunk.css.map",
     "321.0db2ee7c.chunk.js.map": "/woodies/static/js/321.0db2ee7c.chunk.js.map",
@@ -73,6 +73,6 @@
   },
   "entrypoints": [
     "static/css/main.e7c4a2fb.css",
-    "static/js/main.e6cd9202.js"
+    "static/js/main.bf805a00.js"
   ]
 }
