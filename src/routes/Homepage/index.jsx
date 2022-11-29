@@ -1,10 +1,7 @@
-import React from "react";
-// import rect from '../../assets/design/rectDesign.svg'
-// import rectDesign from "assets/design/group.svg";
+import React, { useEffect } from "react";
 import rect from "assets/design/rect.svg";
 import table from "assets/design/table.svg";
 import "./style.scss";
-// import Fade from "react-reveal/Fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTrophy,
@@ -12,33 +9,52 @@ import {
   faTruckFast,
   faHeadset,
 } from "@fortawesome/free-solid-svg-icons";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-
+import { Link } from "react-router-dom";
+// import { usePreloadImages } from "hooks/PreloadImages";
+const preload=[table,rect]
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({ device }) => {
   const isMobile = device === "mobile";
   const isLaptop = device === "laptop";
+  // usePreloadImages(preload)
 
-  function renderBadges(icon, title, description) {
+//   useLayoutEffect(() => {
+//     const imagesPreload = [rect, table];
+//     imagesPreload.forEach((image) => {
+//         const newImage = new Image();
+//         newImage.src = image;
+//         window[image] = newImage;
+//   })
+// },[])
+
+useEffect(() => {
+  for (const image of preload) {
+    const imageElement = new Image();
+    imageElement.src = image;
+  }
+}, [])
+
+
+  function renderBadges(icon, title, description,index) {
     return (
-      <div
-        className={
-          device === "mobile" ? "homepage_bdg hpg_mob" : "homepage_bdg"
-        }
-      >
-        <FontAwesomeIcon icon={icon} />
-        <span>
-          <p>{title}</p>
-          <p>{description}</p>
-        </span>
+      <div className={isMobile ? "badge__mob" : "badge"} key={title}>
+        <div id="badgeSlide">
+          <div
+            className={
+              device === "mobile" ? "homepage_bdg hpg_mob" : "homepage_bdg"
+            }
+          >
+           {!isMobile && <FontAwesomeIcon icon={icon} />} 
+            <span>
+              <p>{title}</p>
+              
+              {!isMobile && <p>{description}</p>} 
+            </span>
+          </div>
+        </div>
       </div>
     );
   }
-
-  // {renderBadges(faTrophy, "High quality", "Crafted from top materials")}
-  // {renderBadges(faCheckSquare, "Warranty protection", "Over 2 years")}
-  // {renderBadges(faTruckFast, "Free shipping", "Order over 150$")}
-  // {renderBadges(faHeadset, "24/7 support", "Dedicated support")}
 
   return (
     <div className="homepage_container" id="homePage">
@@ -54,68 +70,48 @@ export default ({ device }) => {
         >
           <h3>Are you looking for wooden furniture for your place?</h3>
           <h1> This is the Right Place</h1>
-          <button className="homepage_explorebtn">Explore furniture</button>
+      
+              
+        <Link className="homepage_explorebtn"
+        to="customize"
+      >Shop now</Link>
         </span>
 
         <span className="rect_design_container">
-          <img
-            loading="lazy"
-            className={
-              isMobile
-                ? "rect_design rd_mob"
-                : isLaptop
-                ? "rect_design rd_lap"
-                : "rect_design"
-            }
-            src={table}
-            alt="Woodies! wood table design"
-          />
-          <img
-            loading="lazy"
-            className={isMobile ? "rect_design rd_mob" : "rect_design"}
-            src={rect}
-            alt="Woodies! wood table design"
-          />
+    {preload.map((img)=>(
+
+      <img
+      loading="eager"
+      height='auto'
+      width='auto'
+        className={
+          isMobile
+            ? "rect_design rd_mob"
+            : isLaptop
+            ? "rect_design rd_lap"
+            : "rect_design"
+        }
+        src={img}
+        alt="Woodies! wood table design"
+      />
+  ))}
+  
+  
         </span>
       </div>
       <div
         className={isMobile ? "homepage_badges hpgs_mob" : "homepage_badges"}
       >
-        <div class="badge-space">
-          <div class="badge">
-            {
-              <div id="badgeSlide">
-                {renderBadges(
-                  faTrophy,
-                  "High quality",
-                  "Crafted from top materials"
-                )}
-              </div>
-            }
-          </div>
-          <div class="badge">
-          {
-            <div id="badgeSlide">
-            {renderBadges(faCheckSquare, "Warranty protection", "Over 2 years")}
-            </div>
-          }
+        <div className="badge-space">
+          {renderBadges(faTrophy, "High quality", "Crafted from top materials",1)}
+
+          {renderBadges(faCheckSquare, "Warranty protection", "Over 2 years",2)}
+
+          {renderBadges(faTruckFast, "Free shipping", "Order over 150$",3)}
+
+          {renderBadges(faHeadset, "24/7 support", "Dedicated support",4)}
         </div>
-        <div class="badge">
-        {
-          <div id="badgeSlide">
-          {renderBadges(faTruckFast, "Free shipping", "Order over 150$")}
-          </div>
-        }
-      </div>
-      <div class="badge">
-      {
-        <div id="badgeSlide">
-        {renderBadges(faHeadset, "24/7 support", "Dedicated support")}
-        </div>
-      }
-    </div>
-        </div>
-        <div class="ribbon color"></div>
+        <div className="ribbon color"></div>
       </div>
     </div>
   );

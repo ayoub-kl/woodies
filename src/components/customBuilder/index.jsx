@@ -3,20 +3,20 @@ import './style.scss'
 import StepWizard from "react-step-wizard";
 import {Step1,Step2} from './steps';
 import Logo from "assets/logo/woodies.svg";
-
+import sliderTransitions from './transitions.scss'
 // import CustomNav from './customNav';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () =>{
     // const [currentStep,setCurrentStep]=useState(1)
-
+   const transitions= {
+        enterRight: `${sliderTransitions.animated} ${sliderTransitions.enterRight}`,
+        enterLeft: `${sliderTransitions.animated} ${sliderTransitions.enterLeft}`,
+        exitRight: `${sliderTransitions.animated} ${sliderTransitions.exitRight}`,
+        exitLeft: `${sliderTransitions.animated} ${sliderTransitions.exitLeft}`,
+        intro: `${sliderTransitions.animated} ${sliderTransitions.intro}`,
+    }
 
 const CustomNav = ({goToStep,isActive,currentStep}) =>{
-
-useEffect(() => {
-console.log(currentStep)
-console.log(isActive)
-}, [])
-
 
     const [selectedNav,setSelectedNav]=useState("nav_1")
     const handleSelectNav = (id) =>{
@@ -82,7 +82,7 @@ return (
   
     </nav>
 
-    <StepWizard nav={<CustomNav />} isLazyMount={true} onStepChange={handleStepChange} >
+    <StepWizard nav={<CustomNav />} isLazyMount={true} onStepChange={handleStepChange}  >
     <Step1/>
     <Step2/>
     </StepWizard>

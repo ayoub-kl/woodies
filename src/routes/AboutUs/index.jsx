@@ -1,7 +1,7 @@
 import React from "react";
 // import { Parallax } from "react-parallax";
-import bkg_prlx from "assets/images/bkg_prlx.jpg";
-import bkg from "assets/design/bkg_foreground_table.png";
+// import bkg_prlx from "assets/images/bkg_prlx.jpg";
+// import bkg from "assets/design/bkg_foreground_table.png";
 import Logo from "assets/logo/woodies.svg";
 import "./style.scss";
 import { memo } from "react";
@@ -12,6 +12,9 @@ import {
 // eslint-disable-next-line import/no-anonymous-default-export
 export default memo(({ device }) => {
   const isMobile = device === "mobile";
+const bkg_prlx="https://hydrepoi.sirv.com/woodies/images/bkg_prlx.jpg"
+const bkg_prlx_wood="https://hydrepoi.sirv.com/woodies/images/bkg_prlx3.jpg"
+const frgd_prlx_table="https://hydrepoi.sirv.com/woodies/images/bkg_foreground_table.png"
 
   const background = {
   
@@ -41,7 +44,8 @@ export default memo(({ device }) => {
   };
 
   const foreground = {
-    image: bkg,
+    
+    image: frgd_prlx_table,
     translateY: [0, 15],
     scale: [1, 1, "easeOutCubic"],
     shouldAlwaysCompleteAnimation: true,
@@ -66,7 +70,7 @@ export default memo(({ device }) => {
   // )}
 
   return (
-    <div className="aboutus_container" id="aboutUs">
+    <div className={isMobile ? "aboutus_container__mob" : "aboutus_container"} id="aboutUs">
       {true ? (
         // <ParallaxBanner
         // layers={[{image:bkg_prlx,speed:-15}]}
@@ -96,15 +100,15 @@ export default memo(({ device }) => {
           {" "}
           <ParallaxBanner
 
-            layers={[background, headline, foreground, gradientOverlay]}
+            layers={[background, headline, !isMobile && foreground, gradientOverlay]}
             className="full"
           />
           <div
             className={
               isMobile
-                ? "aboutus_subtitles abssub_mob"
+                ? "aboutus_subtitles abssub_mob full_mob mask"
                 : "aboutus_subtitles full mask"
-            }
+            } style={{backgroundImage:`url(${bkg_prlx_wood})`}}
           >
             <h1>Customized furniture made just for you</h1>
           </div>
@@ -113,7 +117,7 @@ export default memo(({ device }) => {
       ) : (
         <div>
           <img
-            src={bkg_prlx}
+            src=""
             lazy="true"
             alt="woodies portfolio models"
             className="portfolio_noprlx_bkg"

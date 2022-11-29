@@ -1,21 +1,22 @@
-import React, { PureComponent, useEffect, useLayoutEffect, useReducer, useRef, useState } from "react";
+import React, {  useEffect, useRef, useState } from "react";
 import Logo from "assets/logo/woodies.svg";
 import "./style.scss";
-import bkg_prlx from "assets/images/bkg_prlx2.jpg";
 import measure from "assets/design/measure.svg";
 import choice from "assets/design/choice.svg";
 import build from "assets/design/build.svg";
 import invoice from "assets/design/invoice.svg";
 import deliver from "assets/design/delivery.svg";
 import { memo } from "react";
-import { Parallax, ParallaxBanner } from "react-scroll-parallax";
-import production from 'assets/video/production.mp4'
-import customize from 'assets/video/customize.mp4'
-import budget from 'assets/video/budget.mp4'
-import delivery from 'assets/video/delivery.mp4'
-import measurement from 'assets/video/measure.mp4'
+import { ParallaxBanner } from "react-scroll-parallax";
+
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default memo(({ device }) => {
+  const production ="https://hydrepoi.sirv.com/woodies/videos/production.mp4";
+  const customize  ="https://hydrepoi.sirv.com/woodies/videos/customize.mp4";
+const budget   ="https://hydrepoi.sirv.com/woodies/videos/budget.mp4";
+const delivery   ="https://hydrepoi.sirv.com/woodies/videos/delivery.mp4";
+const measurement  ="https://hydrepoi.sirv.com/woodies/videos/measure.mp4";
   const isMobile = device === "mobile";
   const stepArray=["step_1","step_2","step_3","step_4","step_5"]
   const [selectedStep,setSelectedStep]=useState(stepArray[0])
@@ -43,7 +44,7 @@ export default memo(({ device }) => {
             default:break
       }
       }
-      console.log(selectedStep)
+      // console.log(selectedStep)
     handleBgVidChoice()
   }, [selectedStep])
 
@@ -70,7 +71,7 @@ export default memo(({ device }) => {
       <div
         className="bg_video"
       >
-        <video loop autoPlay muted playsInline id="bg-video" key={selectedVideo}>
+        <video loop autoPlay muted playsInline id="bg-video" key={selectedVideo} class="Sirv">
         <source src={selectedVideo} ref={videoPlayerRef} type="video/mp4"/>
         </video>
       </div>
@@ -112,12 +113,12 @@ const handleStepClick=(id)=>{
 setSelectedStep(id)
 }
 
-
+// ={selectedStep===id ? "step_wrapper _active" : isMobile ? "step_wrapper__mob"  : "step_wrapper" }
 
   function renderSteps(icon, text, width,id) {
     return (
-      <span className={selectedStep===id ? "step_wrapper _active": "step_wrapper" } onClick={()=>handleStepClick(id)} key={id} id={id}>
-        <img src={icon} width={width} alt="steps" />
+      <span className={"step_wrapper" +  (selectedStep ===id ? " _active" : '') + (isMobile ? " _mob" : '') } onClick={()=>handleStepClick(id)} key={id} id={id}>
+        <img src={icon} width={width} height="auto" loading="lazy" alt="steps" />
 
         <p>{text}</p>
       </span>
@@ -157,7 +158,7 @@ setSelectedStep(id)
             {" "}
             <ParallaxBanner
               layers={[background,gradientOverlay]}
-              className="full"
+              className={isMobile ? "full_video_mob" : "full_video"}
             />
             <div className="steps_wrapper">
             <div
@@ -165,20 +166,21 @@ setSelectedStep(id)
               isMobile ? "steps_disp_choices__mob" : "steps_disp_choices"
             }
           >
-            {renderSteps(choice, "Choose Design", 120,"step_1")}
-            {renderSteps(measure, "Area measuring", 160,"step_2")}
-            {renderSteps(invoice, "Budgeting", 200,"step_3")}
-            {renderSteps(build, "Production", 240,"step_4")}
-            {renderSteps(deliver, "Delivery", 235,"step_5")}
+            {renderSteps(choice, "Choose Design", 80,"step_1")}
+            {renderSteps(measure, "Area measuring", 100,"step_2")}
+            {renderSteps(invoice, "Budgeting", 120,"step_3")}
+            {renderSteps(build, "Production", 160,"step_4")}
+            {renderSteps(deliver, "Delivery", 120,"step_5")}
           </div>
           </div>
 
+   
           </>
           
         ) : (
           <div>
             <img
-              src={bkg_prlx}
+              src=""
               lazy="true"
               alt="woodies portfolio models"
               className="steps_noprlx_bkg"
@@ -202,3 +204,10 @@ setSelectedStep(id)
     </div>
   );
 });
+
+
+// {renderSteps(choice, "Choose Design", 60,"step_1")}
+// {renderSteps(measure, "Area measuring", 100,"step_2")}
+// {renderSteps(invoice, "Budgeting", 140,"step_3")}
+// {renderSteps(build, "Production", 180,"step_4")}
+// {renderSteps(deliver, "Delivery", 170,"step_5")}

@@ -32,7 +32,7 @@ return (
 {renderFurnitureCards("Beds","Modern and comfy beds to build up stamina after a long day.",bkg_bed)}
 {renderFurnitureCards("Sofas","Modern and comfy sofas to build up stamina after a long day.",bkg_sofa)}
 {renderFurnitureCards("Dining table sets","Modern and comfy beds to build up stamina after a long day.",bkg_table)}
-    
+
     </div>
 )
     

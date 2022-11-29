@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./style.scss";
 import Logo from "assets/logo/woodies.svg";
@@ -11,7 +11,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import useWindowPosition from "hooks/useWindowPosition";
 import { useEffect } from "react";
-import { useRef } from "react";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // eslint-disable-next-line import/no-anonymous-default-export

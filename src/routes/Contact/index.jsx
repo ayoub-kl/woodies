@@ -10,21 +10,21 @@ return (
    
     <div className={device==="mobile" ? 'cew_mob' : "contact_elem_wrapper"}>
     <h3>Woodies</h3>
-    <text>0631839255</text>
-    <text>woodies@gmail.com</text>
-    <text>Rabat,Morocco</text>
+    <span>06XXXXXXXX</span>
+    <span>woodies@gmail.com</span>
+    <span>Rabat,Morocco</span>
     </div>
     <div className={device==="mobile" ? 'cew_mob' : "contact_elem_wrapper"}>
     <h3>Product</h3>
-    <text>Furniture</text>
-    <text>Packages</text>
-    <text>Services</text>
+    <span>Furniture</span>
+    <span>Packages</span>
+    <span>Services</span>
     </div>
     <div className={device==="mobile" ? 'cew_mob' : "contact_elem_wrapper"}>
     <h3>Ressources</h3>
-    <text>Blog</text>
-    <text>Faqs</text>
-    <text>Contact us</text>
+    <span>Blog</span>
+    <span>Faqs</span>
+    <span>Contact us</span>
     </div>
     <div className={device==="mobile" ? 'cbg_mob' : "contact_bg"}/>
     </div>

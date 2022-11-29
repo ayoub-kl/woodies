@@ -10,6 +10,8 @@ import AppRoutes from "./routes/AppRoutes"
 export default () =>{
 
 return (
+    <>
+    <script src="https://scripts.sirv.com/sirv.js"/>
     <ParallaxProvider>
     <HelmetProvider>
     <DeviceProvider>
@@ -19,6 +21,7 @@ return (
     </DeviceProvider>
     </HelmetProvider>
     </ParallaxProvider>
+    </>
 
 )
 }

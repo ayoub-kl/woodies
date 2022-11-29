@@ -37,9 +37,10 @@
   height: 190vh;
   z-index: 20;
   position: relative;
-  // &__mob{
-  //   // margin-top: 45%;
-  // }
+  &__mob{
+    @extend .aboutus_container;
+   height: 140vh;
+  }
   .aboutus_title_wrapper {
     display: flex;
     justify-content: center;
@@ -166,16 +167,16 @@ border: 1px solid #000000;
 // z-index: 5;
 // color: white;
 
-font-size:4vw;
+font-size: 7vh;
 color: #ffffff;
 position: absolute;
-top: 80px;
+top: 9vh;
 left: 21vw;
 width: 33%;
-// transform: translate(-50%, -50%);
 font-weight: 400;
 letter-spacing: 8px;
 text-shadow: 1px 0px 4px #d5dcff, 2px 0px 4px #d5e0ff, 3px 0px 4px #d5e8ff, 2px 0px 3px #2c9ed4, 2px 3px 15px #2c86d4, 2px 0px 15px, 5px 0px 125px, 20px 0vw 200px #2c58d4, 40px 0vw 200px #2c41d4;
+-webkit-backdrop-filter: blur(1px);
 backdrop-filter: blur(1px);
 @extend .flicker-slow;
 
@@ -193,12 +194,16 @@ backdrop-filter: blur(1px);
 // }
 
 
-// .abssub_mob{  
+.abssub_mob{  
+@extend .aboutus_subtitles;
+& h2{
+  font-size: 44px;
+width: 60%;
+top: 18px;
+left: 15vw;
+}
 
-//   font-size: 11px;
-//   width: 62%;
-//   padding: 8px;
-// }
+}
 // .sd_child_mob{
 // @extend .abssub_mob;
 // // top: 72%;
@@ -228,8 +233,12 @@ backdrop-filter: blur(1px);
 .full {
   height: 100vh;
   background: #000;
- 
 
+}
+
+.full_mob{
+  height: 40vh;
+  background: #000;
 }
 
 .mask{
@@ -241,7 +250,7 @@ mask-size: 100% auto;
 -webkit-mask-position: center bottom;
 mask-position: center bottom;
 z-index: 1;
-background-image: url("../../assets/images/bkg_prlx3.jpg");
+// background-image: url("../../assets/images/bkg_prlx3.jpg");
 background-repeat: no-repeat;
 background-size: cover;
 box-shadow: inset rgb(0 0 0) 0px 2px 3px 2px;
@@ -265,5 +274,5 @@ box-shadow: inset rgb(0 0 0) 0px 2px 3px 2px;
 // }
 
 [data-testid="layer-2"] {
-  clip-path: polygon(0% 0%, 0% 100%, 18% 100%, 18% 28%, 57.5% 28%, 57.5% 69%, 1px 69%, 9% 107%, 100% 100%, 100% 0%);
+  clip-path: polygon(0% 0%, 0% 100%, 18% 100%, 18% 27%, 57.5% 27%, 57.5% 71%, 1px 71%, 9% 107%, 100% 100%, 100% 0%);
 }

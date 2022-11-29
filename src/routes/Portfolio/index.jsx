@@ -4,14 +4,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Lazy, Pagination } from "swiper";
-import modele1 from "assets/portfolio/modele1.jpg";
-import modele2 from "assets/portfolio/modele2.jpg";
-import modele3 from "assets/portfolio/modele3.jpg";
+
 import useWindowPosition from "hooks/useWindowPosition";
 import { Link } from "react-router-dom";
 import { memo } from "react";
 // eslint-disable-next-line import/no-anonymous-default-export
 export default memo(({ device }) => {
+
+  const modele1 ="https://hydrepoi.sirv.com/woodies/modeles/modele1.jpg";
+  const modele2 ="https://hydrepoi.sirv.com/woodies/modeles/modele2.jpg";
+  const modele3 ="https://hydrepoi.sirv.com/woodies/modeles/modele3.jpg";
+
   //     const scrollPos=useWindowPosition()
 
   // useLayoutEffect(() => {
@@ -30,7 +33,7 @@ export default memo(({ device }) => {
     return (
       <span className="portfolio_model_wrapper">
         <SwiperSlide key={model}>
-          <img src={model} alt="model pic" lazy="true"/>
+          <img src={model} alt="model pic" lazy="true" />
         </SwiperSlide>
       </span>
     );
