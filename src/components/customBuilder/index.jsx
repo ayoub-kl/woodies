@@ -6,7 +6,7 @@ import Logo from "assets/logo/woodies.svg";
 import sliderTransitions from './transitions.scss'
 // import CustomNav from './customNav';
 // eslint-disable-next-line import/no-anonymous-default-export
-export default () =>{
+export default ({device}) =>{
     // const [currentStep,setCurrentStep]=useState(1)
    const transitions= {
         enterRight: `${sliderTransitions.animated} ${sliderTransitions.enterRight}`,
@@ -30,17 +30,15 @@ const CustomNav = ({goToStep,isActive,currentStep}) =>{
         <nav className="builder_progress_bar">
         <ul>
         <li className={currentStep>=1 ?  'button active':'button'} id="nav_1" onClick={()=>goToStep(1)}>
-        <button >1.Choix du meuble</button>
+        <button className='builder_progress_btn' >1.Choix du meuble</button>
         </li>
         <li className={currentStep>=2 ?'button active':'button'} id="nav_2" onClick={(e)=>handleSelectNav(e.currentTarget.id)}>
-        <button > test</button>
+        <button className='builder_progress_btn' > test</button>
         </li>
         <li className={currentStep>=3 ? 'button active':'button'} id="nav_3" onClick={(e)=>handleSelectNav(e.currentTarget.id)}>
-        <button > test</button>
+        <button className='builder_progress_btn'> test</button>
         </li>
-        <li className={currentStep>=4  ? 'button active':'button'} id="nav_4" onClick={(e)=>handleSelectNav(e.currentTarget.id)}>
-        <button > test</button>
-        </li>
+
         </ul>
       </nav>
         </div>
@@ -83,8 +81,8 @@ return (
     </nav>
 
     <StepWizard nav={<CustomNav />} isLazyMount={true} onStepChange={handleStepChange}  >
-    <Step1/>
-    <Step2/>
+    <Step1 device={device}/>
+    <Step2 device={device}/>
     </StepWizard>
     
     </div>
@@ -93,3 +91,6 @@ return (
 )
     
 }
+// <li className={currentStep>=4  ? 'button active':'button'} id="nav_4" onClick={(e)=>handleSelectNav(e.currentTarget.id)}>
+// <button className='builder_progress_btn'> test</button>
+// </li>

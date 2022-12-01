@@ -1,0 +1,80 @@
+{
+    "header": {
+        "title": "Woodies",
+        "menu": {
+            "menu1": "Home",
+            "menu2": "about us",
+            "menu3": "how it works",
+            "menu4": "gallery",
+            "menu5": "Contact"
+        }
+    },
+    "homepage": {
+        "subtitles": {
+            "sub1": "Are you looking for wooden furniture for your place?",
+            "sub2": "This is the Right Place."
+        },
+        "button":"Show now",
+        "badges":{
+            "badge1":{
+                "sub1":"High quality",
+                "sub2":"Crafted from top materials"
+            },
+            "badge2":{
+                "sub1":"Warranty protection",
+                "sub2":"Over 2 years"
+            },
+            "badge3":{
+                "sub1":"Free shipping",
+                "sub2":"Order over 150$"
+            },
+            "badge4":{
+                "sub1":"24/7 support",
+                "sub2":"Dedicated support"
+            }
+        }
+    },
+    "aboutus":{
+        "titles":{
+            "title1":"Woodies est la maison du meuble en bois moderne",
+            "title2": "Customized furniture made just for you"
+        }
+    },
+    "howtosteps":{
+        "steps":{
+            "step_1":"Choose Design",
+            "step_2":"Area measuring",
+            "step_3":"Budgeting",
+            "step_4":"Production",
+            "step_5":"Delivery"
+        }
+    },
+
+    "portfolio":{
+        "subtitles":{
+            "sub1": "High-Quality Furniture Just For You",
+            "sub2": "Our furniture is made from selected and best quality materials that are suitable for your dream home"
+        },
+        "button":"Shop now"
+    },
+    "contact":{
+        "infoGrp1":{
+            "title":"Woodies",
+            "sub1":"06XXXXXXX",
+            "sub2":"woodies@gmail.com",
+            "sub3":"Rabat, Maroc"
+        },
+        "infoGrp2":{
+            "title":"Product",
+            "sub1":"Furniture",
+            "sub2":"Packages",
+            "sub3":"Services"
+        },
+        "infoGrp3":{
+            "title":"Resources",
+            "sub1":"Blog",
+            "sub2":"Faqs",
+            "sub3":"Contact us"
+        }
+    }
+}

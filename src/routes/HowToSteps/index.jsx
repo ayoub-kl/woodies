@@ -8,6 +8,7 @@ import invoice from "assets/design/invoice.svg";
 import deliver from "assets/design/delivery.svg";
 import { memo } from "react";
 import { ParallaxBanner } from "react-scroll-parallax";
+import { useTranslation } from "react-i18next";
 
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -23,6 +24,7 @@ const measurement  ="https://hydrepoi.sirv.com/woodies/videos/measure.mp4";
   const [selectedVideo,setSelectedVideo]=useState("")
   const videoPlayerRef=useRef()
   const vidRef=useRef(1)
+  const {t}=useTranslation()
   // const bkg_styles = {
   //   height: "700px",
   //   width: "100vw",
@@ -51,7 +53,7 @@ const measurement  ="https://hydrepoi.sirv.com/woodies/videos/measure.mp4";
 
     useEffect(() => {
     const bgVidInterval=setInterval(() => {
-      vidRef.current>4 ? vidRef.current=0 : vidRef.current=vidRef.current+1
+      vidRef.current>4 ? vidRef.current=1 : vidRef.current=vidRef.current+1
       setSelectedStep(`step_${vidRef.current}`)
     }, 4000);
 
@@ -71,7 +73,7 @@ const measurement  ="https://hydrepoi.sirv.com/woodies/videos/measure.mp4";
       <div
         className="bg_video"
       >
-        <video loop autoPlay muted playsInline id="bg-video" key={selectedVideo} class="Sirv">
+        <video loop autoPlay muted playsInline id="bg-video" key={selectedVideo} className="Sirv">
         <source src={selectedVideo} ref={videoPlayerRef} type="video/mp4"/>
         </video>
       </div>
@@ -116,11 +118,14 @@ setSelectedStep(id)
 // ={selectedStep===id ? "step_wrapper _active" : isMobile ? "step_wrapper__mob"  : "step_wrapper" }
 
   function renderSteps(icon, text, width,id) {
+    const steps=t('howtosteps.steps',{returnObjects:true})
     return (
       <span className={"step_wrapper" +  (selectedStep ===id ? " _active" : '') + (isMobile ? " _mob" : '') } onClick={()=>handleStepClick(id)} key={id} id={id}>
         <img src={icon} width={width} height="auto" loading="lazy" alt="steps" />
-
-        <p>{text}</p>
+<suspense fallback={<div/>}>
+<p>{steps[id]}</p>
+</suspense>
+      
       </span>
     );
   }

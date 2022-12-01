@@ -1,0 +1,79 @@
+{
+    "header": {
+        "title": "WoodiesFR",
+        "menu": {
+            "menu1": "Acceuil",
+            "menu2": "A propos de nous",
+            "menu3": "Comment ca fonctionne",
+            "menu4": "Galerie",
+            "menu5": "Contact"
+        }
+    },
+    "homepage": {
+        "subtitles": {
+            "sub1": "Cherchez vous des meubles en bois pour votre intérieur ?",
+            "sub2": "C'est le bon endroit."
+        },
+        "button":"Passer la commande",
+        "badges":{
+            "badge1":{
+                "sub1":"Haute qualité",
+                "sub2":"Fabriqué a partir de materiaux de qualité supérieur"
+            },
+            "badge2":{
+                "sub1":"Protection de la garantie",
+                "sub2":"Plus de 2 ans"
+            },
+            "badge3":{
+                "sub1":"Livraison gratuite",
+                "sub2":"Commandes supérieurs a 2000 dhs"
+            },
+            "badge4":{
+                "sub1":"Assistance 24h/24 et 7J/7",
+                "sub2":"Assistance dédiée"
+            }
+        }
+    },
+    "aboutus":{
+        "titles":{
+            "title1":"Woodies est la maison du meuble en bois moderne",
+            "title2": "Des meubles en bois fabriqués juste pour vous"
+        }
+    },
+    "howtosteps":{
+        "steps":{
+            "step_1":"Choix du modèle",
+            "step_2":"Mesure des surfaces",
+            "step_3":"Calcul du budget",
+            "step_4":"Production",
+            "step_5":"Livraison a domicile"
+        }
+    },
+    "portfolio":{
+        "subtitles":{
+            "sub1": "Des meubles de haute qualité rien que pour vous",
+            "sub2": "Nos meubles sont fabriqués à partir de matériaux sélectionnés et de la meilleure qualité qui conviennent à la maison de vos rêves"
+        },
+        "button":"Achetez maintenant"
+    },
+    "contact":{
+        "infoGrp1":{
+            "title":"woodiesFR",
+            "sub1":"06XXXXXXX",
+            "sub2":"woodies@gmail.com",
+            "sub3":"Rabat, Maroc"
+        },
+        "infoGrp2":{
+            "title":"Produit",
+            "sub1":"Meubles",
+            "sub2":"Paquets",
+            "sub3":"Prestations de service"
+        },
+        "infoGrp3":{
+            "title":"Ressources",
+            "sub1":"Blog",
+            "sub2":"FAQ",
+            "sub3":"Contactez-nous"
+        }
+    }
+}

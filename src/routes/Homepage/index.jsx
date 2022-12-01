@@ -10,12 +10,14 @@ import {
   faHeadset,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 // import { usePreloadImages } from "hooks/PreloadImages";
 const preload=[table,rect]
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({ device }) => {
   const isMobile = device === "mobile";
   const isLaptop = device === "laptop";
+  const { t } = useTranslation();
   // usePreloadImages(preload)
 
 //   useLayoutEffect(() => {
@@ -36,6 +38,8 @@ useEffect(() => {
 
 
   function renderBadges(icon, title, description,index) {
+    const badges=t('homepage.badges',{returnObjects:true})
+    console.log(badges)
     return (
       <div className={isMobile ? "badge__mob" : "badge"} key={title}>
         <div id="badgeSlide">
@@ -46,9 +50,9 @@ useEffect(() => {
           >
            {!isMobile && <FontAwesomeIcon icon={icon} />} 
             <span>
-              <p>{title}</p>
+              <p>{badges[index].sub1}</p>
               
-              {!isMobile && <p>{description}</p>} 
+              {!isMobile && <p>{badges[index].sub2}</p>} 
             </span>
           </div>
         </div>
@@ -68,19 +72,20 @@ useEffect(() => {
               : "homepage_subtitle"
           }
         >
-          <h3>Are you looking for wooden furniture for your place?</h3>
-          <h1> This is the Right Place</h1>
+          <h3>{t('homepage.subtitles.sub1')}</h3>
+          <h1> {t('homepage.subtitles.sub2')}</h1>
       
               
         <Link className="homepage_explorebtn"
         to="customize"
-      >Shop now</Link>
+      >{t('homepage.button')}</Link>
         </span>
 
         <span className="rect_design_container">
     {preload.map((img)=>(
 
       <img
+      key={img}
       loading="eager"
       height='auto'
       width='auto'
@@ -103,13 +108,13 @@ useEffect(() => {
         className={isMobile ? "homepage_badges hpgs_mob" : "homepage_badges"}
       >
         <div className="badge-space">
-          {renderBadges(faTrophy, "High quality", "Crafted from top materials",1)}
+          {renderBadges(faTrophy, "High quality", "Crafted from top materials","badge1")}
 
-          {renderBadges(faCheckSquare, "Warranty protection", "Over 2 years",2)}
+          {renderBadges(faCheckSquare, "Warranty protection", "Over 2 years","badge2")}
 
-          {renderBadges(faTruckFast, "Free shipping", "Order over 150$",3)}
+          {renderBadges(faTruckFast, "Free shipping", "Order over 150$","badge3")}
 
-          {renderBadges(faHeadset, "24/7 support", "Dedicated support",4)}
+          {renderBadges(faHeadset, "24/7 support", "Dedicated support","badge4")}
         </div>
         <div className="ribbon color"></div>
       </div>

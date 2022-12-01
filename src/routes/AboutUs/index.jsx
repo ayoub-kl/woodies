@@ -8,10 +8,13 @@ import { memo } from "react";
 import {
   ParallaxBanner,
 } from "react-scroll-parallax";
+import { useTranslation } from "react-i18next";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default memo(({ device }) => {
   const isMobile = device === "mobile";
+  const {t}=useTranslation()
+
 const bkg_prlx="https://hydrepoi.sirv.com/woodies/images/bkg_prlx.jpg"
 const bkg_prlx_wood="https://hydrepoi.sirv.com/woodies/images/bkg_prlx3.jpg"
 const frgd_prlx_table="https://hydrepoi.sirv.com/woodies/images/bkg_foreground_table.png"
@@ -110,7 +113,7 @@ const frgd_prlx_table="https://hydrepoi.sirv.com/woodies/images/bkg_foreground_t
                 : "aboutus_subtitles full mask"
             } style={{backgroundImage:`url(${bkg_prlx_wood})`}}
           >
-            <h1>Customized furniture made just for you</h1>
+            <h1>{t('aboutus.titles.title2')}</h1>
           </div>
           
         </>

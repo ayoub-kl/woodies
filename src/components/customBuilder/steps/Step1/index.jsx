@@ -4,14 +4,14 @@ import bkg_bed from 'assets/builder/bed.jpg'
 import bkg_sofa from 'assets/builder/sofa.jpg'
 import bkg_table from 'assets/builder/diner.jpg'
 // eslint-disable-next-line import/no-anonymous-default-export
-export default ({nextStep,goToStep}) =>{
+export default ({device,nextStep,goToStep}) =>{
 
- 
-    
+  const isMobile = device === "mobile";
+
 const renderFurnitureCards=(title,description,bkg_img)=>{
  
     return (
-        <article className="card" onClick={()=>nextStep()}>
+        <article className="card" onClick={()=>nextStep()} key={title}>
 
         <div className="card__img" ></div>
         <a href="#" className="card_link">
@@ -27,7 +27,7 @@ const renderFurnitureCards=(title,description,bkg_img)=>{
 }
 
 return (
-    <div className='step1_container'>
+    <div className={isMobile ? "step1_container__mob" : "step1_container"}>
 
 {renderFurnitureCards("Beds","Modern and comfy beds to build up stamina after a long day.",bkg_bed)}
 {renderFurnitureCards("Sofas","Modern and comfy sofas to build up stamina after a long day.",bkg_sofa)}

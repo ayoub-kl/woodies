@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./style.scss";
 import Logo from "assets/logo/woodies.svg";
@@ -13,10 +13,14 @@ import useWindowPosition from "hooks/useWindowPosition";
 import { useEffect } from "react";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTranslation, Trans } from 'react-i18next';
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({device}) => {
 const scrollPos=useWindowPosition()
 const [menubarCls,setMenuBarCls]=useState("")
+const { t, i18n } = useTranslation();
+const language=useRef('fr')
 const isMobile=device==="mobile"
 useEffect(() => {
 let barCls="menubar_wrapper"
@@ -29,6 +33,21 @@ setMenuBarCls(barCls)
 // useLayoutEffect(() => {
 // console.log(scrollPos)
 // }, [scrollPos])
+// useEffect(() => {
+//   i18n.changeLanguage('fr');
+// console.log(i18n)
+// }, [])
+
+const handleLngSwitch=()=>{
+  if (language.current==="fr") {
+    i18n.changeLanguage('en');
+    language.current="en"
+  } else {
+    i18n.changeLanguage('fr');
+    language.current="fr"
+  }
+
+}
 
 const handleLinkClick=(id) =>{
 const element = document.getElementById(id);
@@ -71,15 +90,20 @@ return arrSpanTitle
   }
   // menubar_wrapper
   return (
+    <Suspense fallback={<div />}>
     <div className={menubarCls}>
-      <nav className={isMobile ? "menubar_container__mob" : "menubar_container"}>
-        {device!=="mobile" && renderSideBarOption("/", Logo, "Woodies!","logo")}
-        {renderSideBarOption("/", faHome, "Home","homePage")}
-        {renderSideBarOption("about-us", faIdBadge, "About us","aboutUs")}
-        {renderSideBarOption("how-it-works", faRectangleList, "How it works","steps")}
-        {renderSideBarOption("gallery", faImage, "Gallery","portfolio")}
-        {renderSideBarOption("contact", faContactCard, "Contact",'contact')}
-      </nav>
-    </div>
+    <nav className={isMobile ? "menubar_container__mob" : "menubar_container"}>
+    {!isMobile && <input type="checkbox" name="checkbox" className="menubar_lng_switch" onClick={()=>handleLngSwitch()}/>}
+      {device!=="mobile" && renderSideBarOption("/", Logo, t('header.title'),"logo")}
+      {renderSideBarOption("/", faHome, t('header.menu.menu1'),"homePage")}
+      {renderSideBarOption("about-us", faIdBadge, t('header.menu.menu2'),"aboutUs")}
+      {renderSideBarOption("how-it-works", faRectangleList, t('header.menu.menu3'),"steps")}
+      {renderSideBarOption("gallery", faImage, t('header.menu.menu4'),"portfolio")}
+      {renderSideBarOption("contact", faContactCard, t('header.menu.menu5'),'contact')}
+    </nav>
+  </div>
+  </Suspense>
+
+
   );
 };

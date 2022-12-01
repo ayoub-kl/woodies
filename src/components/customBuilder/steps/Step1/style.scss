@@ -5,4 +5,10 @@ display: flex;
 justify-content: normal;
 padding: 40px;
 flex-wrap: wrap;
+
+
+&__mob{
+    @extend .step1_container;
+    padding: 0;
+}
 }
