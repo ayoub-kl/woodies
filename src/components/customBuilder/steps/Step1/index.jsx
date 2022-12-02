@@ -3,9 +3,10 @@ import './style.scss'
 import bkg_bed from 'assets/builder/bed.jpg'
 import bkg_sofa from 'assets/builder/sofa.jpg'
 import bkg_table from 'assets/builder/diner.jpg'
+import { useTranslation } from 'react-i18next'
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({device,nextStep,goToStep}) =>{
-
+  const {t}=useTranslation()
   const isMobile = device === "mobile";
 
 const renderFurnitureCards=(title,description,bkg_img)=>{
@@ -29,9 +30,9 @@ const renderFurnitureCards=(title,description,bkg_img)=>{
 return (
     <div className={isMobile ? "step1_container__mob" : "step1_container"}>
 
-{renderFurnitureCards("Beds","Modern and comfy beds to build up stamina after a long day.",bkg_bed)}
-{renderFurnitureCards("Sofas","Modern and comfy sofas to build up stamina after a long day.",bkg_sofa)}
-{renderFurnitureCards("Dining table sets","Modern and comfy beds to build up stamina after a long day.",bkg_table)}
+{renderFurnitureCards((t('builder.furnitureCards.card1.title')),(t('builder.furnitureCards.card1.sub')),bkg_bed)}
+{renderFurnitureCards(t('builder.furnitureCards.card2.title'),t('builder.furnitureCards.card2.sub'),bkg_sofa)}
+{renderFurnitureCards(t('builder.furnitureCards.card3.title'),t('builder.furnitureCards.card3.sub'),bkg_table)}
 
     </div>
 )

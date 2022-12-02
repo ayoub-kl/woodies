@@ -4,10 +4,12 @@ import StepWizard from "react-step-wizard";
 import {Step1,Step2} from './steps';
 import Logo from "assets/logo/woodies.svg";
 import sliderTransitions from './transitions.scss'
+import { useTranslation } from 'react-i18next';
 // import CustomNav from './customNav';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({device}) =>{
     // const [currentStep,setCurrentStep]=useState(1)
+    const {t}=useTranslation()
    const transitions= {
         enterRight: `${sliderTransitions.animated} ${sliderTransitions.enterRight}`,
         enterLeft: `${sliderTransitions.animated} ${sliderTransitions.enterLeft}`,
@@ -30,13 +32,13 @@ const CustomNav = ({goToStep,isActive,currentStep}) =>{
         <nav className="builder_progress_bar">
         <ul>
         <li className={currentStep>=1 ?  'button active':'button'} id="nav_1" onClick={()=>goToStep(1)}>
-        <button className='builder_progress_btn' >1.Choix du meuble</button>
+        <button className='builder_progress_btn' >{(t('builder.progressBar.step1'))}</button>
         </li>
         <li className={currentStep>=2 ?'button active':'button'} id="nav_2" onClick={(e)=>handleSelectNav(e.currentTarget.id)}>
-        <button className='builder_progress_btn' > test</button>
+        <button className='builder_progress_btn' > {(t('builder.progressBar.step2'))}</button>
         </li>
         <li className={currentStep>=3 ? 'button active':'button'} id="nav_3" onClick={(e)=>handleSelectNav(e.currentTarget.id)}>
-        <button className='builder_progress_btn'> test</button>
+        <button className='builder_progress_btn'> {(t('builder.progressBar.step3'))}</button>
         </li>
 
         </ul>

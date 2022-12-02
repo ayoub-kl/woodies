@@ -14,7 +14,7 @@
             "sub1": "Are you looking for wooden furniture for your place?",
             "sub2": "This is the Right Place."
         },
-        "button":"Show now",
+        "button":"Shop now",
         "badges":{
             "badge1":{
                 "sub1":"High quality",
@@ -36,7 +36,13 @@
     },
     "aboutus":{
         "titles":{
-            "title1":"Woodies est la maison du meuble en bois moderne",
+            "title1":{
+                "part1":"WOODIES ",
+                "part2":"is the ",
+                "part3":"home ",
+                "part4":"of modern wooden ",
+                "part5":"furniture"
+            },
             "title2": "Customized furniture made just for you"
         }
     },
@@ -75,6 +81,27 @@
             "sub1":"Blog",
             "sub2":"Faqs",
             "sub3":"Contact us"
+        }
+    },
+    "builder":{
+        "progressBar":{
+            "step1":"1. Furniture choice",
+            "step2":"2. Customization",
+            "step3":"3. Order summary"
+        },
+        "furnitureCards":{
+            "card1":{
+                "title":"beds",
+                "sub":"Comfy beds to build up stamina after a long day."
+            },
+            "card2":{
+                "title":"sofas",
+                "sub":"Modern sofas to build up stamina after a long day."
+            },
+            "card3":{
+                "title":"Dining table sets",
+                "sub":"Dining sets to enjoy your meals."
+            }
         }
     }
 }

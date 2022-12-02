@@ -29,14 +29,20 @@
                 "sub2":"Commandes supérieurs a 2000 dhs"
             },
             "badge4":{
-                "sub1":"Assistance 24h/24 et 7J/7",
+                "sub1":"Assistance 24h/24",
                 "sub2":"Assistance dédiée"
             }
         }
     },
     "aboutus":{
         "titles":{
-            "title1":"Woodies est la maison du meuble en bois moderne",
+            "title1":{
+                "part1":"WOODIESFR ",
+                "part2":"est la ",
+                "part3":"maison ",
+                "part4":"du meuble en bois ",
+                "part5":"moderne"
+            },
             "title2": "Des meubles en bois fabriqués juste pour vous"
         }
     },
@@ -74,6 +80,27 @@
             "sub1":"Blog",
             "sub2":"FAQ",
             "sub3":"Contactez-nous"
+        }
+    },
+    "builder":{
+        "progressBar":{
+            "step1":"1. Choix du meuble",
+            "step2":"2. personnalisation",
+            "step3":"3. Récap de la commande"
+        },
+        "furnitureCards":{
+            "card1":{
+                "title":"beds",
+                "subTitle":"Des lits confortables pour pour bien se reposer après une longue journée."
+            },
+            "card2":{
+                "title":"sofas",
+                "subTitle":"Des canapés modernes pour bien se reposer après une longue journée."
+            },
+            "card3":{
+                "title":"Dining table sets",
+                "subTitle":"Ensembles de salle à manger pour profiter de vos repas."
+            }
         }
     }
 }

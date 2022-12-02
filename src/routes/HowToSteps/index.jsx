@@ -1,4 +1,4 @@
-import React, {  useEffect, useRef, useState } from "react";
+import React, {  Suspense, useEffect, useRef, useState } from "react";
 import Logo from "assets/logo/woodies.svg";
 import "./style.scss";
 import measure from "assets/design/measure.svg";
@@ -69,6 +69,7 @@ const measurement  ="https://hydrepoi.sirv.com/woodies/videos/measure.mp4";
     scale: [1.1, 1, "easeInQuad"],
     shouldAlwaysCompleteAnimation: true,
     speed: -20,
+    
     children: (
       <div
         className="bg_video"
@@ -122,9 +123,9 @@ setSelectedStep(id)
     return (
       <span className={"step_wrapper" +  (selectedStep ===id ? " _active" : '') + (isMobile ? " _mob" : '') } onClick={()=>handleStepClick(id)} key={id} id={id}>
         <img src={icon} width={width} height="auto" loading="lazy" alt="steps" />
-<suspense fallback={<div/>}>
+<Suspense fallback={<div/>}>
 <p>{steps[id]}</p>
-</suspense>
+</Suspense>
       
       </span>
     );

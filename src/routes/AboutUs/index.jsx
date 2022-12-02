@@ -40,7 +40,8 @@ const frgd_prlx_table="https://hydrepoi.sirv.com/woodies/images/bkg_foreground_t
           isMobile ? "aboutus_subtitles abssub_mob" : "aboutus_subtitles inset"
         }
       >
-        <h2> <span className="flicker-fast">WOODIES</span> is the <span className="flicker-fast">home</span> of modern wooden <span className="flicker-fast">furniture</span> </h2>
+        <h2> <span className="flicker-fast">{t('aboutus.titles.title1.part1')}</span>{t('aboutus.titles.title1.part2')}<span className="flicker-fast">{t('aboutus.titles.title1.part3')}</span>{t('aboutus.titles.title1.part4')} <span className="flicker-fast">
+        {t('aboutus.titles.title1.part5')}</span> </h2>
 
       </div>
     ),
@@ -102,7 +103,6 @@ const frgd_prlx_table="https://hydrepoi.sirv.com/woodies/images/bkg_foreground_t
         <>
           {" "}
           <ParallaxBanner
-
             layers={[background, headline, !isMobile && foreground, gradientOverlay]}
             className="full"
           />

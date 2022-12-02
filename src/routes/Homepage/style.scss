@@ -1,11 +1,12 @@
 @keyframes show {
   0%, 100% { 
     margin-left: 0%;
+    opacity: 1;
 }
 
 30% { 
     margin-left: 0%; 
-    opacity: 0.5;
+    // opacity: 0.5;
 }
 50% { 
   margin-left: -100%; 
@@ -203,7 +204,7 @@
     }
 
     .hs_mob {
-      width: 270px;
+      width: 280px;
       left: 6px;
       top: -27px;
       font-weight: 400;
@@ -401,7 +402,7 @@
       // animation: wobble 5s ease-in-out infinite;
   position: absolute;
   // opacity: 0;
-    animation: show 20s infinite;
+    animation: show 15s infinite;
         --size: 139px;
 
         --light: #fcfaed;

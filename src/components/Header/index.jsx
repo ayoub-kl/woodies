@@ -14,14 +14,15 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslation, Trans } from 'react-i18next';
-
+import Switch from 'components/common/switch'
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({device}) => {
 const scrollPos=useWindowPosition()
 const [menubarCls,setMenuBarCls]=useState("")
-const { t, i18n } = useTranslation();
-const language=useRef('fr')
+const { t } = useTranslation();
+
 const isMobile=device==="mobile"
+const isLaptop=device==="laptop"
 useEffect(() => {
 let barCls="menubar_wrapper"
 barCls=isMobile ? `${barCls} mw_mob --active` : barCls
@@ -38,16 +39,7 @@ setMenuBarCls(barCls)
 // console.log(i18n)
 // }, [])
 
-const handleLngSwitch=()=>{
-  if (language.current==="fr") {
-    i18n.changeLanguage('en');
-    language.current="en"
-  } else {
-    i18n.changeLanguage('fr');
-    language.current="fr"
-  }
 
-}
 
 const handleLinkClick=(id) =>{
 const element = document.getElementById(id);
@@ -78,7 +70,7 @@ return arrSpanTitle
       <Link
         to={link}
         onClick={()=>handleLinkClick(id)}
-        className={device==="mobile" ? "menubar_option mo_mob "  : "menubar_option"}
+        className={isMobile ? "menubar_option mo_mob "  : isLaptop ? "mo_lap" : "menubar_option"}
         // className={({ isActive }) => (isActive ? cx("sidebar__option--selected") : cx("sidebar__option"))}
       >
       
@@ -93,7 +85,8 @@ return arrSpanTitle
     <Suspense fallback={<div />}>
     <div className={menubarCls}>
     <nav className={isMobile ? "menubar_container__mob" : "menubar_container"}>
-    {!isMobile && <input type="checkbox" name="checkbox" className="menubar_lng_switch" onClick={()=>handleLngSwitch()}/>}
+ 
+    {!isMobile && <Switch />}
       {device!=="mobile" && renderSideBarOption("/", Logo, t('header.title'),"logo")}
       {renderSideBarOption("/", faHome, t('header.menu.menu1'),"homePage")}
       {renderSideBarOption("about-us", faIdBadge, t('header.menu.menu2'),"aboutUs")}
@@ -107,3 +100,5 @@ return arrSpanTitle
 
   );
 };
+
+// {!isMobile && <input type="checkbox" name="checkbox" className="menubar_lng_switch" aria-label="bar_language_switch" onClick={()=>handleLngSwitch()}/>}

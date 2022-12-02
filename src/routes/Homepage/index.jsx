@@ -11,6 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import Switch from "components/common/switch";
 // import { usePreloadImages } from "hooks/PreloadImages";
 const preload=[table,rect]
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -39,7 +40,7 @@ useEffect(() => {
 
   function renderBadges(icon, title, description,index) {
     const badges=t('homepage.badges',{returnObjects:true})
-    console.log(badges)
+
     return (
       <div className={isMobile ? "badge__mob" : "badge"} key={title}>
         <div id="badgeSlide">
@@ -62,6 +63,7 @@ useEffect(() => {
 
   return (
     <div className="homepage_container" id="homePage">
+    {isMobile && <Switch />}
       <div className="homepage_wrapper">
         <span
           className={

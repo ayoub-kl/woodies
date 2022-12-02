@@ -51,7 +51,7 @@
     font-weight: 700;
     text-decoration: none;
     color: rgba(34, 34, 34, 0.7);
-
+    
     & span {
       position: relative;
       display: inline-block;
@@ -61,7 +61,23 @@
       animation: flip 6s infinite;
       animation-delay: calc(.2s * var(--i))
     }
+
+    &:first-of-type{
+      display: flex;
+      flex-direction: row;
+      font-size: 18px;
+      padding-right: 11%;
+    }
   }
+
+.mo_lap{
+  @extend .menubar_option;
+  margin-right: 30px;
+  &:first-of-type{
+ 
+    padding-right: 6%;
+  }
+}
 
   .mo_mob {
     margin-right: 18px;
@@ -72,93 +88,22 @@
     font-size: 30px !important;
     color: #e89f71;
     background: transparent !important;
+
+    &:first-of-type{
+      display: block;
+    }
   }
 }
 
-.menubar_option:first-of-type {
-  display: flex;
-  flex-direction: row;
-  font-size: 18px;
-  padding-right: 11%;
-}
+// .menubar_option:first-of-type {
+//   display: flex;
+//   flex-direction: row;
+//   font-size: 18px;
+//   padding-right: 11%;
+// }
 
 
 
-.menubar_lng_switch{
-  position: absolute;
-  left: 0;
-  width: 65px;
-  height: 25px;
-  margin: 10px;
-  appearance: none;
-  -webkit-appearance: none;
-    background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/1024px-Flag_of_France.svg.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 25px;
-  box-shadow: inset 0px 0px 2px rgba(255,255,255,.7);
-  transition: background-image .7s ease-in-out;
-  outline: none;
-  cursor: pointer;
-  overflow: hidden;
-  }
-  
-  .menubar_lng_switch:checked{
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/US_flag_51_stars.svg/2560px-US_flag_51_stars.svg.png');
-  background-size: cover;
-  transition: background-image 1s ease-in-out;
-  }
-  
-  
-  .menubar_lng_switch:after{
-  content: '';
-  width: 25px;
-  height:25px;
-  border-radius: 50%;
-  background-color: #ffffff0d;
-  position: absolute;
-  left: 4px;
-  top: 2px;
-  transform: translateX(0px);
-  animation: off .7s forwards cubic-bezier(.8, .5, .2, 1.4);
-  box-shadow: inset 5px -5px 4px rgba(53, 53, 53, 0.3);
-  }
-  
-  @keyframes off{
-  0%{
-      transform: translateX(80px);
-      width: 46px;
-  }
-  50%{
-      width: 75px;  
-      border-radius: 25px;   
-  }
-  100%{
-      transform: translateX(0px); 
-      width: 46px;
-  }
-  }
-  
-  
-  
-  .menubar_lng_switch:checked:after{
-  animation: on .7s forwards cubic-bezier(.8, .5, .2, 1.4);
-  box-shadow: inset -5px -5px 4px rgba(53, 53, 53, 0.3);
-  }
-  
-  @keyframes on{
-  0%{
-      transform: translateX(0px);
-      width: 46px;
-  }
-  50%{
-      width: 75px;  
-      border-radius: 25px;   
-  }
-  100%{
-      transform: translateX(80px); 
-      width: 46px;
-  }
-  }
+
   
   
