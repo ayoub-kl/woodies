@@ -95,12 +95,16 @@
                 "sub":"Comfy beds to build up stamina after a long day."
             },
             "card2":{
-                "title":"sofas",
+                "title":"Modern sofas",
                 "sub":"Modern sofas to build up stamina after a long day."
             },
             "card3":{
                 "title":"Dining table sets",
                 "sub":"Dining sets to enjoy your meals."
+            },
+            "card4":{
+                "title":"traditional sofas",
+                "sub":"Comfy beds to build up stamina after a long day."
             }
         }
     }

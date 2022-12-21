@@ -112,7 +112,7 @@ width: 60%;
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     
   }
 // .portfolio_model_wrapper{
@@ -203,5 +203,12 @@ width: 70%;
   }
 }
 
+img.Sirv.sirv-image-loading {
+  opacity: 0;
+}
+img.Sirv.sirv-image-loaded {
+  transition: opacity .4s linear;
+  opacity: 1;
+}
 
 }

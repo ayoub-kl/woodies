@@ -90,16 +90,20 @@
         },
         "furnitureCards":{
             "card1":{
-                "title":"beds",
-                "subTitle":"Des lits confortables pour pour bien se reposer après une longue journée."
+                "title":"lits",
+                "sub":"Des lits confortables pour pour bien se reposer après une longue journée."
             },
             "card2":{
-                "title":"sofas",
-                "subTitle":"Des canapés modernes pour bien se reposer après une longue journée."
+                "title":"salons modernes",
+                "sub":"Des canapés modernes pour bien se reposer après une longue journée."
             },
             "card3":{
-                "title":"Dining table sets",
-                "subTitle":"Ensembles de salle à manger pour profiter de vos repas."
+                "title":"Ensembles de salle à manger",
+                "sub":"Ensembles de salle à manger pour profiter de vos repas."
+            },
+            "card4":{
+                "title":"salons traditionnels",
+                "sub":"Des canapés modernes pour bien se reposer après une longue journée."
             }
         }
     }

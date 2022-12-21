@@ -1,4 +1,5 @@
 import DeviceProvider from 'hooks/deviceProvider';
+import TokenProvider from 'hooks/assetsProvider';
 import React from 'react'
 import { HelmetProvider } from 'react-helmet-async';
 import { ParallaxProvider } from 'react-scroll-parallax';
@@ -12,6 +13,7 @@ export default () =>{
 return (
     <>
     <script src="https://scripts.sirv.com/sirv.js"/>
+    <TokenProvider>
     <ParallaxProvider>
     <HelmetProvider>
     <DeviceProvider>
@@ -21,6 +23,7 @@ return (
     </DeviceProvider>
     </HelmetProvider>
     </ParallaxProvider>
+    </TokenProvider>
     </>
 
 )

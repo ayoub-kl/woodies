@@ -60,7 +60,7 @@ const measurement  ="https://hydrepoi.sirv.com/woodies/videos/measure.mp4";
     
     return ()=>{clearInterval(bgVidInterval)}
     }, [])
-    
+
   const background = {
     // image: "https://images.unsplash.com/photo-1570786240066-c0d753711cfe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=881&q=80",
     // video:"../../assets/video/bkg_vid.mp4",

@@ -1,32 +1,29 @@
 import React, { useEffect, useState } from 'react'
 import './style.scss'
 import StepWizard from "react-step-wizard";
-import {Step1,Step2} from './steps';
+import {Step1,Step2,Step3} from './steps';
 import Logo from "assets/logo/woodies.svg";
-import sliderTransitions from './transitions.scss'
 import { useTranslation } from 'react-i18next';
 // import CustomNav from './customNav';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({device}) =>{
     // const [currentStep,setCurrentStep]=useState(1)
     const {t}=useTranslation()
-   const transitions= {
-        enterRight: `${sliderTransitions.animated} ${sliderTransitions.enterRight}`,
-        enterLeft: `${sliderTransitions.animated} ${sliderTransitions.enterLeft}`,
-        exitRight: `${sliderTransitions.animated} ${sliderTransitions.exitRight}`,
-        exitLeft: `${sliderTransitions.animated} ${sliderTransitions.exitLeft}`,
-        intro: `${sliderTransitions.animated} ${sliderTransitions.intro}`,
+    const [selectedProduct,setSelectedProduct]=useState({    length:50,
+        width:50,
+        height:10,
+        filling:'ressort',
+        filling_sub:'mi-ferme',
+        seating:'rounded',})
+    const handleSelectProduct = (props) =>{
+        setSelectedProduct({...selectedProduct,...props})
     }
+
+useEffect(() => {
+// console.log(selectedProduct)
+}, [selectedProduct])
 
 const CustomNav = ({goToStep,isActive,currentStep}) =>{
-
-    const [selectedNav,setSelectedNav]=useState("nav_1")
-    const handleSelectNav = (id) =>{
-        setSelectedNav(id)
-     
-    }
-
-
     return (
         <div>
         <nav className="builder_progress_bar">
@@ -34,10 +31,10 @@ const CustomNav = ({goToStep,isActive,currentStep}) =>{
         <li className={currentStep>=1 ?  'button active':'button'} id="nav_1" onClick={()=>goToStep(1)}>
         <button className='builder_progress_btn' >{(t('builder.progressBar.step1'))}</button>
         </li>
-        <li className={currentStep>=2 ?'button active':'button'} id="nav_2" onClick={(e)=>handleSelectNav(e.currentTarget.id)}>
+        <li className={currentStep>=2 ?'button active':'button'} id="nav_2" >
         <button className='builder_progress_btn' > {(t('builder.progressBar.step2'))}</button>
         </li>
-        <li className={currentStep>=3 ? 'button active':'button'} id="nav_3" onClick={(e)=>handleSelectNav(e.currentTarget.id)}>
+        <li className={currentStep>=3 ? 'button active':'button'} id="nav_3">
         <button className='builder_progress_btn'> {(t('builder.progressBar.step3'))}</button>
         </li>
 
@@ -82,9 +79,10 @@ return (
   
     </nav>
 
-    <StepWizard nav={<CustomNav />} isLazyMount={true} onStepChange={handleStepChange}  >
-    <Step1 device={device}/>
-    <Step2 device={device}/>
+    <StepWizard nav={<CustomNav />} isLazyMount={true} onStepChange={handleStepChange} >
+    <Step1 device={device} handleSelectProduct={handleSelectProduct}/>
+    <Step2 device={device} selectedProduct={selectedProduct} handleSelectProduct={handleSelectProduct}/>
+    <Step3 device={device} selectedProduct={selectedProduct}/>
     </StepWizard>
     
     </div>
